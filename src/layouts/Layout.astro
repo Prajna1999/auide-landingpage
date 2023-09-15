@@ -3,7 +3,7 @@ interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
+const { title="THIS IS A PAGE" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,7 +17,17 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
+
+		<footer class="blur">
+			<small>Copyright ©<span id="copyrightYear"></span>&nbsp;Auide</small>
+		</footer>
+		<script>
+			document.querySelector('#copyrightYear').textContent =new Date().getFullYear();
+		</script>
+		
 	</body>
 </html>
 <style is:global>
@@ -29,8 +39,18 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151A;
+		background: #f1f2f6;
 		background-size: 224px;
+	}
+	footer{
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color:black;
+		font-size: 20px;
+		line-height: 1.6;
+		text-align: center;
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
