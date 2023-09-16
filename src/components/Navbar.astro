@@ -1,8 +1,9 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
+import Button from './Button.astro'
 const navLinks = [
   {
-    name: 'Home',
+    name: 'Product',
     url: '/',
     style: 'transparent',
   },
@@ -16,17 +17,19 @@ const navLinks = [
     url: '#',
     style: 'transparent',
   },
-  {
-    name: 'Contact Me',
-    url: '#',
-    style: 'primary',
-  },
+ 
 ];
 
 ---
 <nav>
     <div class="container nav-container">
-    <!-- <Icon name="logo" width={225} class="logo"/> -->
+        <div class="logo">
+            <Icon name="headphone" />
+            <h4 class="h4">Auide</h3>
+        </div>
+        
+        
+
     <div class="nav-wrapper">
       <button class="btn btn--menu" id="menu-btn" aria-expanded="false" aria-label="Open mobile nav">
         <Icon name="feather:menu" width={25}/>
@@ -38,6 +41,9 @@ const navLinks = [
           </li>
         ))
         }
+        <li role="none">
+            <Button text="Join Waitlist" link="https://rpgrzpf2g3c.typeform.com/to/wxi3pUKM" style="secondary"/>
+        </li>
       </ul>  
     </div>
     </div>
