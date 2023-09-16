@@ -1,0 +1,17 @@
+---
+const {text, link, style}=Astro.props;
+---
+
+<a href={link} class="btn btn--${style}">{text}</a>
+<style>
+    a{
+        background-color: #9D00FF;
+        color: white;
+        border-radius: 8px ;
+        width: max-content;
+        padding-left: 16px;
+        padding-right: 16px;
+        
+       
+    }
+</style>
